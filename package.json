@@ -4,7 +4,7 @@
   "description": "a basic react es6 boiler plate repo",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --content-base app --inline --hot"
+    "start": "webpack-dev-server --content-base src --inline --hot"
   },
   "repository": {
     "type": "git",

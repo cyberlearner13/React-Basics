@@ -9,13 +9,17 @@ module.exports = {
     entry: [
         './src/index.js'
     ],
+    devServer: {
+      inline: true,
+      port: 5000
+   },
     output: {
         path: __dirname + '/dist',
         filename: "bundle.min.js"
     },
     module: {
         loaders: [
-            {test: /\js$/, exclude: /node_modules/, loader:"babel-loader"}
+            {test: /\.js?$/, exclude: /node_modules/, loader:"babel-loader"}
         ]
     },
     plugins:[HtmlWebPackPluginConfig]
