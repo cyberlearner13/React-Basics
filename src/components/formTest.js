@@ -5,10 +5,9 @@ export default class TestingFormElements extends React.Component{
     constructor(props){
         super(props);
         this.state = { checked : false ,option : false};
-        this.handleClick = this.handleClick.bind(this);
-        this.optionSelected = this.optionSelected.bind(this);
+        
     }
-    handleClick(){
+    handleClick(e){
         if(this.state.checked === false){
             this.setState({
                 checked : true
@@ -45,11 +44,11 @@ export default class TestingFormElements extends React.Component{
         return(
             <form>
                     <label style={{"color":"#1295c7"}}>Are you a Star Wars fan</label>
-                    <input type="checkbox" className="formControl" onClick={this.handleClick} />
+                    <input type="checkbox" className="formControl" onClick={this.handleClick.bind(this)} />
                     <br/>
                     {this.state.checked ? div : null}
                     <label style={{"color":"#1295c7"}}>Select any one:</label>
-                    <select onChange = {this.optionSelected}>
+                    <select onChange = {this.optionSelected.bind(this)}>
                         <option value="Policy">Policy #</option>
                         <option value="Distribution">Distribution #</option>
                     </select>
